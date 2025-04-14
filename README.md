@@ -79,7 +79,7 @@ Integrate it as a script step, making sure environment variables are set via you
 
 ## 👨‍💻 Author
 
-Created by [Kurt](https://github.com/your-username) — Developer @ QNB
+Created by [Kurt](https://github.com/mustafakurt07) — Developer
 
 ---
 
