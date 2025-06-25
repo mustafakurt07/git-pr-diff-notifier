@@ -154,6 +154,7 @@ def main():
     repo_name = os.getenv('BUILD_REPOSITORY_NAME', '')
     pr_id = os.getenv('SYSTEM_PULLREQUEST_PULLREQUESTID', '')
     pr_title = os.getenv('SYSTEM_PULLREQUEST_TITLE', current_branch)
+    git_host_name = os.getenv("GIT_HOSTNAME", "your-pr-system.com")
 
     if not commit_hash or not REPO_DIR:
         print("Missing required environment variables.")
@@ -167,7 +168,7 @@ def main():
         sys.exit(0)
 
     commit_message = get_commit_messages(base_branch, current_branch)
-    pr_link = f"https://your-pr-system.com/{organization}/{project}/_git/{repo_name}/pullrequest/{pr_id}" if pr_id else "PR link not found"
+    pr_link = f"https://{git_host_name}/{organization}/{project}/_git/{repo_name}/pullrequest/{pr_id}" if pr_id else "PR link not found"
 
     email_body = f"""
     <html><body>
